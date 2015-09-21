@@ -1,0 +1,8 @@
+## Interface: 60200
+## Title: VoiceAlerts
+## Author: Elstarin - Drak'Thul
+## SavedVariables: VoiceAlertsDB
+## SavedVariablesPerCharacter: VoiceAlertsCharDB
+
+Core.lua
+BossList.lua
