@@ -889,10 +889,7 @@ local function createContentLine(parent, spellID, text, bossName, event)
 
 		e:SetMultiLine(true)
 		e:SetMaxLetters(100)
-		-- e:SetHistoryLines(100)
 		e:SetAutoFocus(false)
-		-- e:SetFocus(false)
-		-- e:SetIndentedWordWrap(true)
 
 		do -- Scripts
 			e:SetScript("OnEscapePressed", function(self)
@@ -1037,7 +1034,7 @@ function VA.populateContent(bossData, bossName)
 				f = createContentLine(content.frames[event], spellID, text, bossName, event)
 			end
 
-			local name = GetSpellInfo(spellID)
+			local name = GetSpellInfo(spellID) or "No name"
 			f.button.title:SetText(name .. " (" .. spellID .. ")")
 			f.editBox:SetText((spellDB[event] and spellDB[event][spellID]) or text)
 
@@ -1303,6 +1300,7 @@ do -- Create Base Frame
 	  f = VA.base
 	  f:SetPoint("CENTER")
 	  f:SetSize(750, 556)
+		f:SetFrameStrata("HIGH")
 
 	  local backdrop = {
 	  bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
